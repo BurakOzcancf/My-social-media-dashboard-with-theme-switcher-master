@@ -1,0 +1,302 @@
+:root {
+  --Up-Arrow: hsl(163, 72%, 41%);
+  --Down-Arrow: hsl(356, 69%, 56%);
+  --FacebookLine: hsl(208, 92%, 53%);
+  --TwitterLine: hsl(203, 89%, 53%);
+  --InstagramLine: hsl(37, 97%, 70%), hsl(329, 70%, 58%);
+  --YoutubeLine: hsl(348, 97%, 39%);
+  --Toggle-Dark: hsl(210, 78%, 56%), hsl(146, 68%, 55%);
+  --Dark-Body-BG: hsl(230, 17%, 14%);
+  --Dark-Blue-Top-BG: hsl(232, 19%, 15%);
+  --Dark-Card-BG: hsl(228, 28%, 20%);
+  --Dark-Text: hsl(228, 34%, 66%);
+  --Dark-White-Text: hsl(0, 0%, 100%);
+  --Toggle-Light: hsl(230, 22%, 74%);
+  --White-Body-BG: hsl(0, 0%, 100%);
+  --Pale-Blue-Top-BG: hsl(225, 100%, 98%);
+  --Light-Card-BG: hsl(227, 47%, 96%);
+  --Light-Text: hsl(228, 12%, 44%);
+  --Light-Dark-Text: hsl(230, 17%, 14%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 0.875rem;
+  font-family: Inter;
+  font-weight: 400;
+}
+
+header {
+  border-radius: 0 0 1rem 1rem;
+  margin: 0 1.5rem;
+  padding: 0.5rem 1rem 10rem;
+  background: var(--Pale-Blue-Top-BG);
+}
+
+header .header__title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 1rem 0 0.2rem;
+}
+
+header .header__description {
+  color: var(--Light-Text);
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+header .header__divider {
+  width: 100%;
+  height: 1px;
+  background-color: var(--Light-Text);
+}
+
+header .header__switchname {
+  margin-left: 1.5rem;
+  position: absolute;
+  font-weight: 700;
+  margin-top: 1rem;
+  color: var(--Light-Text);
+}
+
+header .header__switch {
+  margin-right: 1.5rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 1rem;
+  position: relative;
+  width: 5rem;
+  height: 2rem;
+  float: right;
+}
+
+header .header__switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+header .header__switch .slider {
+  position: absolute;
+  cursor: pointer;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--Toggle-Light);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+header .header__switch .slider:before {
+  position: absolute;
+  content: "";
+  height: 1.5rem;
+  width: 1.5rem;
+  right: 4px;
+  bottom: 4px;
+  background-color: var(--White-Body-BG);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+header .header__switch input:checked + .slider {
+  background: -webkit-gradient(linear, left top, right top, from(var(--Toggle-Dark)));
+  background: linear-gradient(to right, var(--Toggle-Dark));
+}
+
+header .header__switch input:focus + .slider {
+  background-color: var(--Toggle-Light);
+}
+
+header .header__switch input:checked + .slider::before {
+  -webkit-transform: translateX(-3em);
+          transform: translateX(-3em);
+}
+
+header .header__switch .slider.round {
+  border-radius: 1rem;
+}
+
+header .header__switch .slider.round::before {
+  border-radius: 50%;
+}
+
+.hero {
+  margin: -6.5rem auto 0;
+}
+
+.hero .hero__cards {
+  border-radius: 0.5rem;
+  background-color: var(--Light-Card-BG);
+  text-align: center;
+  margin: 2rem;
+  padding-bottom: 0.5rem;
+  position: relative;
+  color: var(--Light-Dark-Text);
+}
+
+.hero .hero__cards .hero__line {
+  margin-left: -50%;
+  display: inline-block;
+  position: absolute;
+  width: 100%;
+  height: 0.3rem;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.hero .hero__cards .hero__line.facebook {
+  background-color: var(--FacebookLine);
+}
+
+.hero .hero__cards .hero__line.twitter {
+  background-color: var(--TwitterLine);
+}
+
+.hero .hero__cards .hero__line.instagram {
+  background: -webkit-gradient(linear, left top, right top, from(var(--InstagramLine)));
+  background: linear-gradient(to right, var(--InstagramLine));
+}
+
+.hero .hero__cards .hero__line.youtube {
+  background-color: var(--YoutubeLine);
+}
+
+.hero .hero__cards .hero__username {
+  padding-top: 2rem;
+  margin-bottom: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-weight: 700;
+  color: var(--Light-Text);
+}
+
+.hero .hero__cards .hero__username img {
+  display: block;
+  padding: 0 1rem;
+}
+
+.hero .hero__cards .hero__numbers {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.hero .hero__cards .hero__text {
+  color: var(--Light-Text);
+  letter-spacing: 2.5px;
+  margin: 0.5rem 0;
+  text-transform: uppercase;
+}
+
+.hero__time {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.hero__time img {
+  margin-right: 0.5rem;
+}
+
+.up {
+  color: var(--Up-Arrow);
+}
+
+.down {
+  color: var(--Down-Arrow);
+}
+
+.features .features__title {
+  text-align: left;
+  font-size: 2rem;
+  margin: 1rem;
+  color: var(--Light-Text);
+  font-weight: 700;
+}
+
+.features .features__cards .features__card {
+  display: -ms-grid;
+  display: grid;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+      grid-template-areas: "A B" "C D";
+  margin: 1rem;
+  border-radius: 0.5rem;
+  background-color: var(--Light-Card-BG);
+  padding: 1.5rem;
+}
+
+.features .features__cards .features__card img {
+  display: inline-block;
+  margin: auto;
+}
+
+.features .features__cards .features__card .features__text {
+  padding: 0.5rem;
+}
+
+.features .features__cards .features__card .features__icon {
+  padding: 0.5rem;
+}
+
+.features .features__cards .features__card .features__rate {
+  font-size: 2rem;
+  padding: 0.5rem;
+  font-weight: 700;
+}
+
+.features .features__cards .features__card .features__day {
+  padding: 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: auto;
+}
+
+.features .features__cards .features__card .features__day img {
+  margin-right: 0.2rem;
+}
+
+@media only screen and (min-width: 58.75rem) {
+  .hero {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (25%)[4];
+        grid-template-columns: repeat(4, 25%);
+    padding: 0 2rem;
+  }
+  .hero .hero__cards {
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+  }
+  .features .features__cards {
+    padding: 0 2rem;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (25%)[4];
+        grid-template-columns: repeat(4, 25%);
+  }
+  .features .features__cards .features__card {
+    padding: 1rem 0;
+    margin: 0.5rem;
+  }
+}
+/*# sourceMappingURL=main.css.map */
