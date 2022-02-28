@@ -115,6 +115,7 @@ header {
   }
 }
 .hero {
+  list-style: none;
   margin: -6.5rem auto 0;
   .hero__cards {
     border-radius: 0.5rem;
@@ -191,6 +192,7 @@ header {
     font-weight: 700;
   }
   .features__cards {
+    list-style: none;
     .features__card {
       display: grid;
       text-align: center;

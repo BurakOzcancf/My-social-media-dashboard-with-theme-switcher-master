@@ -139,6 +139,7 @@ header .header__label .slider.round::before {
 }
 
 .hero {
+  list-style: none;
   margin: -6.5rem auto 0;
 }
 
@@ -238,6 +239,10 @@ header .header__label .slider.round::before {
   margin: 1rem;
   color: var(--Light-Text);
   font-weight: 700;
+}
+
+.features .features__cards {
+  list-style: none;
 }
 
 .features .features__cards .features__card {
