@@ -17,6 +17,8 @@
   --Light-Card-BG: hsl(227, 47%, 96%);
   --Light-Text: hsl(228, 12%, 44%);
   --Light-Dark-Text: hsl(230, 17%, 14%);
+  --Font-Weight-Thick: 700;
+  --Font-Weight-Thin: 400;
 }
 
 * {
@@ -26,7 +28,7 @@
           box-sizing: border-box;
   font-size: 0.875rem;
   font-family: Inter;
-  font-weight: 400;
+  font-weight: var(--Font-Weight-Thin);
 }
 
 header {
@@ -54,19 +56,29 @@ header .header__divider {
   background-color: var(--Light-Text);
 }
 
+header .header__switch {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
 header .header__switchname {
   margin-left: 1.5rem;
-  position: absolute;
   font-weight: 700;
+  font-size: 1rem;
   margin-top: 1rem;
   color: var(--Light-Text);
 }
 
-header .header__switch {
+header .header__label {
   margin-right: 1.5rem;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   margin-top: 1rem;
   position: relative;
   width: 5rem;
@@ -74,13 +86,13 @@ header .header__switch {
   float: right;
 }
 
-header .header__switch input {
+header .header__label input {
   opacity: 0;
   width: 0;
   height: 0;
 }
 
-header .header__switch .slider {
+header .header__label .slider {
   position: absolute;
   cursor: pointer;
   left: 0;
@@ -92,7 +104,7 @@ header .header__switch .slider {
   transition: 0.4s;
 }
 
-header .header__switch .slider:before {
+header .header__label .slider:before {
   position: absolute;
   content: "";
   height: 1.5rem;
@@ -104,25 +116,25 @@ header .header__switch .slider:before {
   transition: 0.4s;
 }
 
-header .header__switch input:checked + .slider {
+header .header__label input:checked + .slider {
   background: -webkit-gradient(linear, left top, right top, from(var(--Toggle-Dark)));
   background: linear-gradient(to right, var(--Toggle-Dark));
 }
 
-header .header__switch input:focus + .slider {
+header .header__label input:focus + .slider {
   background-color: var(--Toggle-Light);
 }
 
-header .header__switch input:checked + .slider::before {
+header .header__label input:checked + .slider::before {
   -webkit-transform: translateX(-3em);
           transform: translateX(-3em);
 }
 
-header .header__switch .slider.round {
+header .header__label .slider.round {
   border-radius: 1rem;
 }
 
-header .header__switch .slider.round::before {
+header .header__label .slider.round::before {
   border-radius: 50%;
 }
 
@@ -185,13 +197,13 @@ header .header__switch .slider.round::before {
 }
 
 .hero .hero__cards .hero__numbers {
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: 700;
 }
 
 .hero .hero__cards .hero__text {
   color: var(--Light-Text);
-  letter-spacing: 2.5px;
+  letter-spacing: 3px;
   margin: 0.5rem 0;
   text-transform: uppercase;
 }
@@ -251,6 +263,8 @@ header .header__switch .slider.round::before {
 
 .features .features__cards .features__card .features__text {
   padding: 0.5rem;
+  text-align: left;
+  font-weight: var(--Font-Weight-Thick);
 }
 
 .features .features__cards .features__card .features__icon {
@@ -260,7 +274,7 @@ header .header__switch .slider.round::before {
 .features .features__cards .features__card .features__rate {
   font-size: 2rem;
   padding: 0.5rem;
-  font-weight: 700;
+  font-weight: var(--Font-Weight-Thick);
 }
 
 .features .features__cards .features__card .features__day {
@@ -275,12 +289,12 @@ header .header__switch .slider.round::before {
   margin-right: 0.2rem;
 }
 
-@media only screen and (min-width: 58.75rem) {
+@media only screen and (min-width: 40rem) {
   .hero {
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: (25%)[4];
-        grid-template-columns: repeat(4, 25%);
+    -ms-grid-columns: (50%)[2];
+        grid-template-columns: repeat(2, 50%);
     padding: 0 2rem;
   }
   .hero .hero__cards {
@@ -291,12 +305,37 @@ header .header__switch .slider.round::before {
     padding: 0 2rem;
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: (25%)[4];
-        grid-template-columns: repeat(4, 25%);
+    -ms-grid-columns: (50%)[2];
+        grid-template-columns: repeat(2, 50%);
   }
   .features .features__cards .features__card {
     padding: 1rem 0;
     margin: 0.5rem;
+  }
+}
+
+@media only screen and (min-width: 58.75rem) {
+  header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .header__divider {
+    display: none;
+  }
+  .header__switchname {
+    margin-right: 5rem;
+  }
+  .hero {
+    -ms-grid-columns: (25%)[4];
+        grid-template-columns: repeat(4, 25%);
+  }
+  .features .features__cards {
+    -ms-grid-columns: (25%)[4];
+        grid-template-columns: repeat(4, 25%);
   }
 }
 /*# sourceMappingURL=main.css.map */

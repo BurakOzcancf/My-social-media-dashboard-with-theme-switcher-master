@@ -14,13 +14,17 @@
 </head>
 <body>
     <header>
-        <div class="header__title">Social Media Dashboard</div>
-        <div class="header__description">Total Followers: 23,004</div>
-        <div class="header__divider"></div>
-        <div class="header__switchname">Dark Mode</div>
+        <div class="header__container">
+            <div class="header__title">Social Media Dashboard</div>
+            <div class="header__description">Total Followers: 23,004</div>
+            <div class="header__divider"></div>
+        </div>
         <label class="header__switch">
-            <input type="checkbox" id="modeCheck" onclick="darkMode()">
-            <div class="slider round"></div>
+            <div class="header__switchname">Dark Mode</div>
+            <label class="header__label">
+                <input type="checkbox" id="modeCheck" onclick="darkMode()">
+                <div class="slider round"></div>
+            </label>
         </label>
     </header>
     <main>
@@ -50,7 +54,7 @@
                 <span class="hero__line youtube"></span>
                 <div class="hero__username"><img src="./images/icon-youtube.svg" alt="youtube">Nathan F.</div>
                 <div class="hero__numbers">8239</div>
-                <div class="hero__text">followers</div>
+                <div class="hero__text">subscribers</div>
                 <div class="hero__time down"><img src="./images/icon-down.svg" alt="down">144 Today</div>
             </div>
         </section>

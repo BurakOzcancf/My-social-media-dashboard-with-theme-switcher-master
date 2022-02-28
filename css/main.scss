@@ -19,6 +19,9 @@
   --Light-Card-BG: hsl(227, 47%, 96%);
   --Light-Text: hsl(228, 12%, 44%);
   --Light-Dark-Text: hsl(230, 17%, 14%);
+
+  --Font-Weight-Thick: 700;
+  --Font-Weight-Thin: 400;
 }
 
 * {
@@ -27,7 +30,7 @@
   box-sizing: border-box;
   font-size: 0.875rem;
   font-family: Inter;
-  font-weight: 400;
+  font-weight: var(--Font-Weight-Thin);
 }
 header {
   border-radius: 0 0 1rem 1rem;
@@ -49,16 +52,21 @@ header {
     height: 1px;
     background-color: var(--Light-Text);
   }
+  .header__switch {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+  }
   .header__switchname {
     margin-left: 1.5rem;
-    position: absolute;
     font-weight: 700;
+    font-size: 1rem;
     margin-top: 1rem;
     color: var(--Light-Text);
   }
-  .header__switch {
+  .header__label {
     margin-right: 1.5rem;
-    align-items: center;
     margin-top: 1rem;
     position: relative;
     width: 5rem;
@@ -149,12 +157,12 @@ header {
       }
     }
     .hero__numbers {
-      font-size: 2.5rem;
+      font-size: 3rem;
       font-weight: 700;
     }
     .hero__text {
       color: var(--Light-Text);
-      letter-spacing: 2.5px;
+      letter-spacing: 3px;
       margin: 0.5rem 0;
       text-transform: uppercase;
     }
@@ -199,6 +207,8 @@ header {
       }
       .features__text {
         padding: 0.5rem;
+        text-align: left;
+        font-weight: var(--Font-Weight-Thick);
       }
       .features__icon {
         padding: 0.5rem;
@@ -206,7 +216,7 @@ header {
       .features__rate {
         font-size: 2rem;
         padding: 0.5rem;
-        font-weight: 700;
+        font-weight: var(--Font-Weight-Thick);
       }
       .features__day {
         padding: 0.5rem;
@@ -220,10 +230,10 @@ header {
     }
   }
 }
-@media only screen and (min-width: 58.75rem) {
+@media only screen and (min-width: 40rem) {
   .hero {
     display: grid;
-    grid-template-columns: repeat(4, 25%);
+    grid-template-columns: repeat(2, 50%);
     padding: 0 2rem;
     .hero__cards {
       margin-right: 0.5rem;
@@ -234,11 +244,31 @@ header {
     .features__cards {
       padding: 0 2rem;
       display: grid;
-      grid-template-columns: repeat(4, 25%);
+      grid-template-columns: repeat(2, 50%);
       .features__card {
         padding: 1rem 0;
         margin: 0.5rem;
       }
+    }
+  }
+}
+@media only screen and (min-width: 58.75rem) {
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
+  .header__divider {
+    display: none;
+  }
+  .header__switchname {
+    margin-right: 5rem;
+  }
+  .hero {
+    grid-template-columns: repeat(4, 25%);
+  }
+  .features {
+    .features__cards {
+      grid-template-columns: repeat(4, 25%);
     }
   }
 }
